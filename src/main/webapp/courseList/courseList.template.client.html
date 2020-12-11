@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Manager</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="./courseList.style.client.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand "> <i class="fa fa-bars" aria-hidden="true"></i>  Course Manager</a>
+        <form class="col-sm-6 float-left">
+            <input class="" type="text" placeholder="New Course Title" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-plus-circle"
+                    aria-hidden="true"></i></button>
+        </form>
+    </nav>
+    <button class="addbutton"><i class="fa fa-3x fa-plus-circle" aria-hidden="true"></i></button>
+    <!--Courses-->
+    <div class="container content">
+        <table id="courses" class="table table-hover" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="priority-1" scope="col" width="45%">Title</th>
+                    <th class="priority-3" scope="col" width="10%">Owned by</th>
+                    <th class="priority-2" scope="col" width="15%">Last modified by me</th>
+                    <th class="priority-2" scope="col" width="3%"><i class="fa fa-th-large" aria-hidden="true"></i></th>
+                    <th class="priority-2" scope="col" width="3%"><i class="fa fa-arrow-up" aria-hidden="true"></i></th>
+                    <th class="priority-1" scope="col" width="5%"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>
+                    <td class="priority-3">me</td>
+                    <td class="priority-2">5:50 PM</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>
+                    <td class="priority-3">you</td>
+                    <td class="priority-2">5:20 PM</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>                    
+                    <td class="priority-3">mom</td>
+                    <td class="priority-2">yesterday</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>
+                    <td class="priority-3">me</td>
+                    <td class="priority-2">yesterday</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>
+                    <td class="priority-3">her</td>
+                    <td class="priority-2">September 20, 2020</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>
+                    <td class="priority-3">him</td>
+                    <td class="priority-2">September 10, 2020</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>
+                    <td class="priority-3">Eric</td>
+                    <td class="priority-2">August 30, 2020</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                    <td class="priority-1">
+                        <a href="../courseEditor/courseEditor.template.client.html">
+                            <i class="fas fa-file"></i> CS4500 WebDevHomework
+                        </a>
+                    </td>                    
+                    <td class="priority-3">me</td>
+                    <td class="priority-2">August 30, 2020</td>
+                    <td class="priority-2"></td>
+                    <td class="priority-2"></td>
+                    <td class="priority-1"><button><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

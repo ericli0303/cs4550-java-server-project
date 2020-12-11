@@ -1,0 +1,16 @@
+
+@media screen and (max-width: 1400px) and (min-width: 1000px) {
+    .priority-3{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .priority-3{
+        display:none;
+    }
+    .priority-2{
+        display:none;
+    }
+
+}

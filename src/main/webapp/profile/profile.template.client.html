@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="./profile.style.client.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            Profile succesfully saved
+        </div>
+        <h1>Profile</h1>
+        <form>
+            <!--Username-->
+            <div class="form-group row">
+                <label for="usernameFld" class="col-sm-2 col-form-label">
+                    Username
+                </label>
+                <div class="col-sm-10">
+                    <input class="form-control wbdv-field wbdv-username" id="usernameFld" placeholder="Alice" readonly>
+                </div>
+            </div>
+            <!--Phone-->
+            <div class="form-group row">
+                <label for="phoneFld" class="col-sm-2 col-form-label">
+                    Phone </label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control wbdv-field wbdv-phone" id="phoneFld"
+                        placeholder="(555) 123-4324">
+                </div>
+            </div>
+            <!--Email-->
+            <div class="form-group row">
+                <label for="emailFld" class="col-sm-2 col-form-label">
+                    Email </label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control wbdv-field wbdv-email" id="emailFld"
+                        placeholder="alice@wonderland.com">
+                </div>
+            </div>
+            <!--Role-->
+            <div class="form-group row">
+                <label for="roleFld" class="col-sm-2 col-form-label">
+                    Role </label>
+                <div class="col-sm-10">
+                    <select class="form-control wbdv-field wbdv-role" id="roleFld">
+                        <option value="Faculty">Faculty</option>
+                        <option value="Student">Student</option>
+                        <option value="Admin">Admin</option> 
+                     </select>
+                </div>
+            </div>
+            <!--Birthday-->
+            <div class="form-group row">
+                <label for="birthdayFld" class="col-sm-2 col-form-label">
+                    Date of Birth </label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control wbdv-field wbdv-dob" id="birthdayFld"
+                        placeholder="mm/dd/yyyy">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <!--Update-->
+                    <div class="row">
+                        <button type="submit" formaction="" class="btn btn-primary btn-block wbdv-button wbdv-register">Update</button>
+                    </div>
+                    <!--Logout-->
+                    <div class="row">
+                        <button type="submit" formaction="../login/login.template.client.html" class="btn btn-danger btn-block wbdv-button wbdv-register">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
