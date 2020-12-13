@@ -41,6 +41,18 @@ public class UserController {
         return newUser;
     }
 
+    @PostMapping("/api/users/signIn")
+    public User signIn(
+            HttpSession session,
+            @RequestBody User user) {
+        if(getIsUserAndPass(user)) {
+            session.setAttribute("profile", user);
+            return user;
+        } else {
+            return null;
+        }
+    }
+
     /**
      * Given a session, returns the user's profile with the password taken out
      * @param session the http session
