@@ -45,7 +45,7 @@ public class UserController {
     public User signIn(
             HttpSession session,
             @RequestBody User user) {
-        if(getIsUserAndPass(user)) {
+        if(userService.isUserAndPass(user)) {
             session.setAttribute("profile", user);
             return user;
         } else {
