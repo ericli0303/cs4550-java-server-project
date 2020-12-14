@@ -1,13 +1,11 @@
 package com.example.myapp.services;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 
 import com.example.myapp.models.Following;
 import com.example.myapp.models.User;
-import com.example.myapp.models.Widget;
 import com.example.myapp.repositories.FollowingRepository;
 import com.example.myapp.repositories.UserRepository;
 

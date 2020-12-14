@@ -1,7 +1,6 @@
 package com.example.myapp.repositories;
 
 import com.example.myapp.models.User;
-import com.example.myapp.models.Widget;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

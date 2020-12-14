@@ -14,6 +14,15 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
+    public User findUserByUsername(String username) {
+        List<User> foundUsers = userRepository.findUserByUsername(username);
+        if(!foundUsers.isEmpty()){
+            return foundUsers.get(0);
+        } else {
+            return null;
+        }
+    }
+
     public List<User> findAllUsers() {
         return (List<User>) userRepository.findAll();
     }

@@ -1,8 +1,6 @@
 package com.example.myapp.controllers;
 
 import com.example.myapp.models.User;
-import com.example.myapp.models.Widget;
-import com.example.myapp.repositories.UserRepository;
 import com.example.myapp.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,8 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", allowedHeaders = "*")
 public class UserController {
     @Autowired
     UserService userService;
@@ -36,7 +35,7 @@ public class UserController {
             HttpSession session,
             @RequestBody User user) {
         User newUser = userService.createUser(user);
-        newUser.setPassword("***");
+//        newUser.setPassword("***");
         session.setAttribute("profile", newUser);
         return newUser;
     }
@@ -46,8 +45,9 @@ public class UserController {
             HttpSession session,
             @RequestBody User user) {
         if(userService.isUserAndPass(user)) {
-            session.setAttribute("profile", user);
-            return user;
+            User tempUser = userService.findUserByUsername(user.getUsername());
+            session.setAttribute("profile", tempUser);
+            return tempUser;
         } else {
             return null;
         }
@@ -61,7 +61,7 @@ public class UserController {
     @PostMapping("/api/profile")
     public User profile(HttpSession session) {
         User profile = (User) session.getAttribute("profile");
-        profile.setPassword("***");
+//        profile.setPassword("***");
         return profile;
     }
 
@@ -106,3 +106,5 @@ public class UserController {
         userService.deleteUser(userId);
     }
 }
+
+//mysql://b8fb7732ecea35:2a51decc@us-cdbr-east-02.cleardb.com/heroku_42d9c73607813e0?reconnect=true
