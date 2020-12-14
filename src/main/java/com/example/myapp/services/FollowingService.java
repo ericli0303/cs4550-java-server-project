@@ -40,6 +40,11 @@ public class FollowingService {
         return followings;
     }
 
+    public List<Following> getFollowingsByCreator(int creator) {
+        List<Following> followings = followingRepository.findFollowersByCreator(creator);
+        return followings;
+    }
+
     public List<User> getRecentFollowers(int creator) {
         List<Following> followings = followingRepository.findRecentFollowersForCreator(creator);
 //        followings.sort(Comparator.comparing(Following::getTime));

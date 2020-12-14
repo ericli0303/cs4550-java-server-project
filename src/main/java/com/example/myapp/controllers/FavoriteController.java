@@ -1,7 +1,9 @@
 package com.example.myapp.controllers;
 
 import com.example.myapp.models.Favorite;
+import com.example.myapp.models.MealPlan;
 import com.example.myapp.services.FavoriteService;
+import com.example.myapp.services.MealPlanService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,6 +24,8 @@ import java.util.List;
 public class FavoriteController {
     @Autowired
     FavoriteService favoriteService;
+    @Autowired
+    MealPlanService mealPlanService;
 
 
     @GetMapping("/api/favorites")
@@ -32,6 +37,18 @@ public class FavoriteController {
     public List<Favorite> getFavoritesByFollowerId(
             @PathVariable("uid") int uid)  {
         return favoriteService.getFavoritesByFollowerId(uid);
+    }
+
+    @GetMapping("/api/followers/{uid}/favorites/mealplans")
+    public List<MealPlan> getFavoriteMealPlansByFollowerId(
+            @PathVariable("uid") int uid)  {
+        List<Favorite> favorites = favoriteService.getFavoritesByFollowerId(uid);
+        List<MealPlan> mealPlans = new ArrayList<MealPlan>();
+        for(Favorite f: favorites) {
+            MealPlan m = mealPlanService.getMealPlanById(f.getMealPlanId());
+            mealPlans.add(m);
+        }
+        return mealPlans;
     }
 
     @GetMapping("/api/favorites/{fid}")
