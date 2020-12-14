@@ -40,7 +40,7 @@ public class UserController {
         return newUser;
     }
 
-    @PostMapping("/api/users/signIn")
+    @PostMapping("/api/users/signin")
     public User signIn(
             HttpSession session,
             @RequestBody User user) {
@@ -49,7 +49,7 @@ public class UserController {
             session.setAttribute("profile", tempUser);
             return tempUser;
         } else {
-            return null;
+            return new User();
         }
     }
 
