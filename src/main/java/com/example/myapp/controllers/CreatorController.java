@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 //@CrossOrigin(origins = "*")
-@CrossOrigin(origins = "https://cs4550-f20-project.herokuapp", allowCredentials = "true", allowedHeaders = "*")
+@CrossOrigin(origins = "https://cs4550-f20-project.herokuapp.com", allowCredentials = "true", allowedHeaders = "*")
 public class CreatorController {
     @Autowired
     UserService userService;
