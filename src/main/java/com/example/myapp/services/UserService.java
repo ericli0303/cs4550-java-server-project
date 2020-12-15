@@ -47,6 +47,7 @@ public class UserService {
 
     public User updateUser(int userId, User user) {
         User oldUser = userRepository.findById(userId).get();
+        oldUser.setUsername(user.getUsername());
         oldUser.setPassword(user.getPassword());
         return userRepository.save(oldUser);
     }

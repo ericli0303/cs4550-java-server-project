@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 //@CrossOrigin(origins = "*")
-@CrossOrigin(origins = "https://cs4550-f20-project.herokuapp.com", allowCredentials = "true", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", allowedHeaders = "*")
 public class FollowingController {
     @Autowired
     FollowingService followingService;
@@ -83,6 +83,14 @@ public class FollowingController {
     public void deleteFollowing(
             @PathVariable("fid") int fid) {
         followingService.deleteFollowing(fid);
+    }
+
+    @DeleteMapping("/api/followings/{fid}/followers/{cid}/creators")
+    public Following deleteFollowingByFollowerAndCreator(
+            @PathVariable("fid") int fid,
+            @PathVariable("cid") int cid) {
+        System.out.println("Deleting Following By Follower And Creator");
+        return followingService.deleteFollowingByFollowerAndCreator(fid, cid);
     }
 
     @PostMapping("/api/followings")

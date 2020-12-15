@@ -1,10 +1,13 @@
 package com.example.myapp.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 import com.example.myapp.models.Favorite;
+import com.example.myapp.models.MealPlan;
 import com.example.myapp.repositories.FavoriteRepository;
+import com.example.myapp.repositories.MealPlanRepository;
 import com.example.myapp.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,8 @@ public class FavoriteService {
     UserRepository userRepository;
     @Autowired
     FavoriteRepository favoriteRepository;
+    @Autowired
+    MealPlanService mealPlanService;
 
     public List<Favorite> findAllFavorites() {
         return (List<Favorite>) favoriteRepository.findAll();
@@ -33,10 +38,14 @@ public class FavoriteService {
         return favoriteRepository.save(favorite);
     }
 
-    public List<Favorite> getRecentFavorites(int followerId) {
+    public List<MealPlan> getRecentFavorites(int followerId) {
         List<Favorite> favorites = favoriteRepository.findRecentFavoritesByFollowerId(followerId);
-//        followings.sort(Comparator.comparing(Following::getTime));
-        return favorites;
+        List<MealPlan> mealPlans = new ArrayList<MealPlan>();
+        for(Favorite f: favorites) {
+            MealPlan m = mealPlanService.getMealPlanById(f.getMealPlanId());
+            mealPlans.add(m);
+        }
+        return mealPlans;
     }
 
 

@@ -65,6 +65,17 @@ public class FollowingService {
         }
     }
 
+    public Following deleteFollowingByFollowerAndCreator(int followerId, int creatorId) {
+        List<Following> followings = followingRepository.findRecentFollowersForCreator(creatorId);
+        for(Following f: followings) {
+            if(f.getFollowerId()==followerId) {
+                followingRepository.delete(f);
+                return f;
+            }
+        }
+        return null;
+    }
+
     public Following getFollowingById(int fid) {
         return followingRepository.findById(fid).get();
     }
