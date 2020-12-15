@@ -108,8 +108,8 @@ public class UserController {
     }
 
     @GetMapping("/api/user/{userId}")
-    public boolean getIsUser(
-            @PathVariable("userId") String userId) {
+    public User getUserById(
+            @PathVariable("userId") int userId) {
         return userService.getUserById(userId);
     }
 }
