@@ -62,6 +62,7 @@ public class UserController {
     public User profile(HttpSession session) {
         User profile = (User) session.getAttribute("profile");
 //        profile.setPassword("***");
+        System.out.println(profile.getUsername());
         return profile;
     }
 
@@ -104,6 +105,12 @@ public class UserController {
     public void deleteUser(
             @PathVariable("userId") int userId) {
         userService.deleteUser(userId);
+    }
+
+    @GetMapping("/api/user/{userId}")
+    public boolean getIsUser(
+            @PathVariable("userId") String userId) {
+        return userService.getUserById(userId);
     }
 }
 
