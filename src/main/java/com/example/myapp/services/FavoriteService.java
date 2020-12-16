@@ -32,7 +32,7 @@ public class FavoriteService {
         List<Favorite> tempFavorites= favoriteRepository.findFavoritesByFollowerId(followerId);
         for(Favorite f: tempFavorites) {
             if(f.getMealPlanId()==mealPlanId) {
-                throw new IllegalArgumentException("Following Already Exists");
+                throw new IllegalArgumentException("Favorite Already Exists");
             }
         }
         return favoriteRepository.save(favorite);

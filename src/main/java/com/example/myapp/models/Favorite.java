@@ -16,6 +16,7 @@ public class Favorite {
     private Integer id;
     private int followerId;
     private Integer mealPlanId;
+    private String mealPlanName;
     private Date time;
 
     public Integer getId() {
@@ -48,5 +49,13 @@ public class Favorite {
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    public String getMealPlanName() {
+        return mealPlanName;
+    }
+
+    public void setMealPlanName(String mealPlanName) {
+        this.mealPlanName = mealPlanName;
     }
 }
