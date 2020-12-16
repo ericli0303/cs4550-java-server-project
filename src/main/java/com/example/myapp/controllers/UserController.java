@@ -18,8 +18,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", allowedHeaders = "*")
-//@CrossOrigin(origins = "https://cs4550-f20-project.herokuapp.com", allowCredentials = "true", allowedHeaders = "*")
+//@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", allowedHeaders = "*")
+@CrossOrigin(origins = "https://cs4550-f20-project.herokuapp.com", allowCredentials = "true", allowedHeaders = "*")
 public class UserController {
     @Autowired
     UserService userService;
